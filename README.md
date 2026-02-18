@@ -1,6 +1,6 @@
 # EfficientNetV2-Skin-Lesion-Classification-Lab_Assignment_2
 
-# # EfficientNetV2-Based Multiclass Skin Lesion Classification
+## EfficientNetV2-Based Multiclass Skin Lesion Classification
 
 ## 📌 Overview
 
