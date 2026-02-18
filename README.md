@@ -1,87 +1,87 @@
-# EfficientNetV2-Skin-Lesion-Classification-Lab_Assignment_2
+# EfficientNetV2-Skin-Lesion-Classification (Lab Assignment 2)
 
-## EfficientNetV2-Based Multiclass Skin Lesion Classification
+## 🧠 EfficientNetV2-Based Multiclass Skin Lesion Classification
 
 ## 📌 Overview
 
-This project implements multiclass skin lesion classification using **EfficientNetV2-Small** with transfer learning on the HAM10000 dataset.
+This project focuses on multiclass classification of skin lesions using a transfer learning approach with EfficientNetV2-Small trained on the HAM10000 dataset.
 
-The model was trained in two stages:
-1. Feature Extraction (frozen backbone)
-2. Fine-Tuning (partially unfrozen layers)
+Training was performed in two phases:
 
----
-
-## 🧠 Model Architecture
-
-- Backbone: EfficientNetV2-S (ImageNet pretrained)
-- Input Size: 224×224
-- Global Average Pooling
-- Dropout (0.3)
-- Dense Layer (7-class Softmax)
+1. Feature Extraction – Backbone frozen  
+2. Fine-Tuning – Top layers partially unfrozen for domain adaptation  
 
 ---
 
-## 📊 Dataset
+## 🏗 Model Architecture
 
-**HAM10000 (Human Against Machine 10000)**  
+- Backbone: EfficientNetV2-S (pretrained on ImageNet)  
+- Input Size: 224 × 224  
+- Global Average Pooling Layer  
+- Dropout: 0.3  
+- Output Layer: Dense (7-class Softmax activation)  
+
+---
+
+## 📊 Dataset Details
+
+### HAM10000 (Human Against Machine 10000)
+
 - Total Images: 10,015  
 - Number of Classes: 7  
-  - akiec  
-  - bcc  
-  - bkl  
-  - df  
-  - mel  
-  - nv  
-  - vasc  
+
+### Classes:
+- akiec  
+- bcc  
+- bkl  
+- df  
+- mel  
+- nv  
+- vasc  
 
 ---
 
 ## 🚀 Training Strategy
 
 - Optimizer: Adam  
-- Loss: Categorical Crossentropy  
-- Image Augmentation: Rotation, Zoom, Horizontal Flip  
-- Fine-tuning: Top 30% layers unfrozen  
+- Loss Function: Categorical Crossentropy  
+- Data Augmentation:
+  - Random Rotation  
+  - Zoom  
+  - Horizontal Flip  
+- Fine-Tuning: Top 30% of layers unfrozen  
 
 ---
 
-## 📈 Results Comparison
+## 📈 Results Summary
 
-| Model | Validation Accuracy |
-|-------|---------------------|
-| Phase 1 (Feature Extraction) | ~67% |
+| Model Stage | Validation Accuracy |
+|-------------|--------------------|
+| Feature Extraction | ~67% |
 | Fine-Tuned Model | ~66–68% |
-| Research Paper Result | **88.62%** |
+| Reported Research Accuracy | 88.62% |
 
 ---
 
 ## 📉 Performance Gap Analysis
 
-The lower accuracy compared to the research paper (88.62%) may be due to:
+The observed performance gap compared to the reported research result (88.62%) may be attributed to:
 
-- Severe class imbalance (dominant “nv” class)
-- Limited number of training epochs
-- Basic augmentation strategy
-- Limited hyperparameter tuning
-- Reduced computational resources
-
----
-
-## 🔬 Key Observations
-
-- The model showed bias toward the majority class.
-- Fine-tuning provided limited improvement.
-- Transfer learning successfully extracted meaningful medical image features.
+- Significant class imbalance (major dominance of “nv” class)  
+- Fewer training epochs  
+- Limited data augmentation techniques  
+- Minimal hyperparameter optimization  
+- Hardware constraints limiting extensive experimentation  
 
 ---
 
-## 🛠 Requirements
+## 🔎 Key Findings
 
-```bash
-tensorflow
-numpy
-pandas
-matplotlib
-seaborn
-scikit-learn
+- Model predictions were biased toward the majority class.  
+- Fine-tuning resulted in marginal performance improvement.  
+- Transfer learning effectively captured meaningful dermatological features.  
+
+---
+
+## 🛠 Required Libraries
+
