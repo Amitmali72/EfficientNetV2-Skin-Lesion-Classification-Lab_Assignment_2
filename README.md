@@ -84,4 +84,10 @@ The observed performance gap compared to the reported research result (88.62%) m
 ---
 
 ## 🛠 Required Libraries
+-tensorflow
+-numpy
+-pandas
+-matplotlib
+-seaborn
+-scikit-learn
 
